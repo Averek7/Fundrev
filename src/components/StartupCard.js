@@ -7,7 +7,7 @@ const StartupCard = ({ startupInfo }) => {
   const handleInterested = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/interest/${startupInfo._id}`
+        `https://backend-fundrev.onrender.com/api/interest/${startupInfo._id}`
       );
 
       if (response.status === 200) {

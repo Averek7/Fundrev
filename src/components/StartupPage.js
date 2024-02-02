@@ -18,7 +18,7 @@ function StartupPage() {
       formData.append("startDate", startDate);
       formData.append("endDate", endDate);
       const response = await axios.post(
-        "http://localhost:5000/api/upload",
+        "https://backend-fundrev.onrender.com/api/upload",
         formData,
         {
           headers: {

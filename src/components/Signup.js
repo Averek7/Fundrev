@@ -36,11 +36,14 @@ const Signup = ({ onSignup }) => {
     event.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:5000/auth/signup", {
-        userType,
-        ...(userType === "investor" && investorData),
-        ...(userType === "startup" && startupData),
-      });
+      const response = await axios.post(
+        "https://backend-fundrev.onrender.com/auth/signup",
+        {
+          userType,
+          ...(userType === "investor" && investorData),
+          ...(userType === "startup" && startupData),
+        }
+      );
 
       if (response.status === 201) {
         console.log("Signup successful");

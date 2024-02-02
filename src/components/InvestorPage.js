@@ -8,7 +8,9 @@ const InvestorPage = ({ investorInfo }) => {
   useEffect(() => {
     const fetchStartups = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/startups");
+        const response = await axios.get(
+          "https://backend-fundrev.onrender.com/api/startups"
+        );
         console.log("Startups:", response.data);
         setStartups(response.data);
       } catch (error) {

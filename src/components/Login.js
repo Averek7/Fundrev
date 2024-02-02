@@ -29,21 +29,27 @@ const Login = ({ onLogin }) => {
 
     if (loginType === "startup") {
       try {
-        const response = await axios.post(`http://localhost:5000/auth/login/startup`, {
-          companyName,
-          loginType,
-        });
+        const response = await axios.post(
+          `https://backend-fundrev.onrender.com/auth/login/startup`,
+          {
+            companyName,
+            loginType,
+          }
+        );
         onLogin(response.data);
       } catch (error) {
         console.error("Login error:", error);
       }
     } else {
       try {
-        const response = await axios.post(`http://localhost:5000/auth/login/investor`, {
-          userId,
-          password,
-          loginType,
-        });
+        const response = await axios.post(
+          `https://backend-fundrev.onrender.com/auth/login/investor`,
+          {
+            userId,
+            password,
+            loginType,
+          }
+        );
 
         onLogin(response.data);
       } catch (error) {
